@@ -3,3 +3,4 @@ wazuh-install.sh
 *.log
 __pycache__/
 .env
+*.deb
