@@ -11,7 +11,7 @@ A local AI-powered SOC triage tool that automatically analyzes security alerts a
 
 ## Status
 - [x] Phase 1 — Detection layer (Wazuh + Suricata)
-- [ ] Phase 2 — Storage + pipeline
+- [x] Phase 2 — Storage + pipeline
 - [ ] Phase 3 — AI triage layer
 - [ ] Phase 4 — Dashboard + notifications
 - [ ] Phase 5 — Red team + metrics
