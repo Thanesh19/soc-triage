@@ -4,8 +4,8 @@ A local AI-powered SOC triage tool that automatically analyzes security alerts a
 
 ## Stack
 - **Detection**: Wazuh (HIDS) + Suricata (NIDS)
-- **Storage**: Elasticsearch + ChromaDB
-- **AI**: Mistral 7B via Ollama + LangChain RAG
+- **Storage**: Elasticsearch + Docker
+- **AI**: Mistral 7B via Ollama + LangChain
 - **Dashboard**: Streamlit
 - **Notifications**: Slack webhook
 
@@ -14,5 +14,12 @@ A local AI-powered SOC triage tool that automatically analyzes security alerts a
 - [x] Phase 2 — Storage + pipeline
 - [x] Phase 3 — AI triage layer
 - [x] Phase 4 — Dashboard + notifications
-- [ ] Phase 5 — Red team + metrics
+- [x] Phase 5 — Red team + metrics (46 alerts, 100% detection rate)
 - [ ] Phase 6 — Polish + publish
+
+## Red Team Results
+- Target: Metasploitable2 (192.168.56.103)
+- Attacks: nmap scan, SSH login, FTP brute force, vsftpd CVE-2011-2523 exploit, credential theft
+- Total alerts: 46
+- Detection rate: 5/5 attacks detected (100%)
+- MITRE coverage: T1595, T1110, T1190, T1078, T1003
