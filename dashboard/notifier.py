@@ -1,8 +1,9 @@
 import requests
+import os
 import json
 from elasticsearch import Elasticsearch
 
-SLACK_WEBHOOK = "https://hooks.slack.com/services/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"
+SLACK_WEBHOOK = os.environ.get("SLACK_WEBHOOK_URL", "")
 ES_HOST = "http://localhost:9200"
 ES_INDEX = "soc-alerts"
 SEVERITY_THRESHOLD = 5
