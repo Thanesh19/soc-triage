@@ -4,3 +4,6 @@ wazuh-install.sh
 __pycache__/
 .env
 *.deb
+.env
+feedback.db
+*.restore
