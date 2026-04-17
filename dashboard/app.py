@@ -43,7 +43,7 @@ def save_feedback(alert_id, verdict, feedback):
     conn.commit()
     conn.close()
 
-def get_alerts(size=20):
+def get_alerts(size=50):
     try:
         result = es.search(index=ES_INDEX, body={
             "query": {"match_all": {}},
@@ -79,7 +79,7 @@ st.set_page_config(page_title="SOC Triage Dashboard", layout="wide")
 st.title("🛡️ SOC Triage Dashboard")
 st.caption("AI-powered alert triage using Mistral 7B + Wazuh + Suricata")
 
-alerts = get_alerts(20)
+alerts = get_alerts(50)
 wazuh_count = sum(1 for a in alerts if a.get("source") == "wazuh")
 suricata_count = sum(1 for a in alerts if a.get("source") == "suricata")
 
