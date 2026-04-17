@@ -3,7 +3,20 @@
 A fully local, AI-powered SOC triage tool that detects real attacks, analyzes alerts using Mistral 7B, and produces MITRE ATT&CK mapped verdicts — no cloud, no paid APIs.
 
 ## Architecture
-Attack → Wazuh/Suricata → Python Normalizer → Elasticsearch → LangChain + Mistral 7B → Streamlit Dashboard → Slack Alerts
+
+```mermaid
+flowchart LR
+    A[🔴 Attacker\nKali Linux] -->|attacks| B[🎯 Target\nMetasploitable2]
+    B -->|network traffic| C[Suricata\nNIDS]
+    B -->|system logs| D[Wazuh\nHIDS]
+    C -->|eve.json| E[Python\nNormalizer]
+    D -->|alerts.json| E
+    E -->|normalized alerts| F[(Elasticsearch\nDocker)]
+    F -->|fetch alerts| G[LangChain +\nMistral 7B]
+    G -->|AI verdict| H[Streamlit\nDashboard]
+    G -->|critical alert| I[Slack\n#alerts]
+    H -->|feedback| J[(SQLite\nFeedback DB)]
+```
 
 ## Stack
 | Tool | Version | Purpose |
