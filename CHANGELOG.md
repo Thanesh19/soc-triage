@@ -22,3 +22,15 @@
 
 ## [0.1.0] - Phase 1
 - Lab setup complete
+
+## [1.1.0] — Phase 7 release
+
+### Added
+- docs/phase7_findings.md — false positive testing report
+
+### Phase 7 results
+- 4 scenarios tested, 3/4 correctly classified (75%)
+- False positive found: sudo whoami classified as Critical
+- Root cause: context-free AI lacks user behaviour baseline
+- Fix: whitelist rules + alert enrichment recommended
+- Wazuh Indexer heap reduced 4GB to 1GB — Mistral 7B runs without RAM issues
