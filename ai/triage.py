@@ -7,7 +7,7 @@ ES_HOST = "http://localhost:9200"
 ES_INDEX = "soc-alerts"
 
 es = Elasticsearch(ES_HOST)
-llm = OllamaLLM(model="mistral", num_predict=150, temperature=0)
+llm = OllamaLLM(model="mistral")
 
 PROMPT = PromptTemplate(
     input_variables=["source", "severity", "description", "category", "mitre"],

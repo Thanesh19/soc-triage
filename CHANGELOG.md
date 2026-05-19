@@ -29,7 +29,7 @@
 - docs/phase7_findings.md — false positive testing report
 
 ### Phase 7 results
-- 4 scenarios tested, 3/4 correctly classified (75%)
+- 3 scenarios tested, 2/3 correctly classified (67%)
 - False positive found: sudo whoami classified as Critical
 - Root cause: context-free AI lacks user behaviour baseline
 - Fix: whitelist rules + alert enrichment recommended
