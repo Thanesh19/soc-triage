@@ -1,4 +1,4 @@
-# SOC Triage — AI-Powered Security Operations Center
+# AI-Powered SOC Triage & SOAR Pipeline
 
 A fully local, AI-powered SOC triage tool that detects real attacks, analyzes alerts using Mistral 7B, and produces MITRE ATT&CK mapped verdicts — no cloud, no paid APIs.
 
